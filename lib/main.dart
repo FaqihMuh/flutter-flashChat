@@ -4,21 +4,19 @@ import 'package:flash_chat/screens/welcome_screen.dart';
 import 'package:flash_chat/screens/login_screen.dart';
 import 'package:flash_chat/screens/registration_screen.dart';
 import 'package:flash_chat/screens/chat_screen.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 // void main() async => runApp(FlashChat());
 void main() async {
-  await dotenv.load(fileName: ".env");
   // Ensure that Firebase is initialized
   WidgetsFlutterBinding.ensureInitialized();
   // Initialize Firebase
   await Firebase.initializeApp(
       options: FirebaseOptions(
-    apiKey: '${dotenv.env['APIKEY']}',
-    appId: '${dotenv.env['APPID']}',
-    messagingSenderId: '${dotenv.env['SENDERID']}',
-    projectId: 'flashchat-14ca8',
-    storageBucket: 'flashchat-14ca8.appspot.com',
+    apiKey: 'your apiKey',
+    appId: 'your appId',
+    messagingSenderId: 'your messagingSenderId',
+    projectId: 'your projectId',
+    storageBucket: 'your storageBucket',
   ));
   //
   runApp(FlashChat());
